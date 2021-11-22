@@ -18,10 +18,12 @@ class BST {
     int height(Node<T>*) const; // helper to height() and height(const t&)
     void preOrder(Node<T>*) const; // helper to preOrder()
     void inOrder(Node<T>*) const; // helper to inOrder()
-    void postOrder(Node<T>*) const; // helper to postOrder
+    void postOrder(Node<T>*) const; // helper to postOrder()
+    void removeAll(Node<T>*); // helper to destructor
 
   public:
     BST(); // constructor
+    ~BST(); // destuctor
     void insert(const T&); // insert a new node
     Node<T>* search(const T&) const; // search for a node
     T largest() const; // find largest node

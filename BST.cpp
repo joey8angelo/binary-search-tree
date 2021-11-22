@@ -6,6 +6,23 @@ template <typename T>
 BST<T>::BST() : root(nullptr) {}
 
 template <typename T>
+BST<T>::~BST() {
+    removeAll(root);
+    root = nullptr;
+}
+
+template <typename T>
+void BST<T>::removeAll(Node<T>* node) {
+    if (node == nullptr)
+        return;
+    else {
+        removeAll(node->l);
+        removeAll(node->r);
+        delete node;
+    }
+}
+
+template <typename T>
 void BST<T>::insert(const T& data) {
     if (root == nullptr) { // insert as root
         root = new Node<T>(data);
